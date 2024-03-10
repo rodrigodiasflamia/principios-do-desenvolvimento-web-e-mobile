@@ -15,25 +15,21 @@ import jakarta.validation.constraints.NotBlank;
 public class Produto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long codigo;
+	private Long codigo;
 
-	@NotBlank
 	@Column(name = "DESCRICAO", nullable = false)
 	private String descricao;
 
-	@NotBlank
 	@Column(name = "QUANTIDADE", nullable = false)
-	private long quantidade;
+	private Long quantidade;
 
-	@NotBlank
 	@Column(name = "VALOR_CUSTO", nullable = false)
-	private float custo;
+	private Float custo;
 
-	@NotBlank
 	@Column(name = "VALOR_VENDA", nullable = false)
-	private float venda;
+	private Float venda;
 
-	public long getCodigo() {
+	public Long getCodigo() {
 		return this.codigo;
 	}
 
@@ -41,19 +37,19 @@ public class Produto implements Serializable {
 		return this.descricao;
 	}
 
-	public long getQuantidade() {
+	public Long getQuantidade() {
 		return this.quantidade;
 	}
 
-	public float getCusto() {
+	public Float getCusto() {
 		return this.custo;
 	}
 
-	public float getVenda() {
+	public Float getVenda() {
 		return this.venda;
 	}
 
-	public void setCodigo(final long codigo) {
+	public void setCodigo(final Long codigo) {
 		this.codigo = codigo;
 	}
 
@@ -61,15 +57,15 @@ public class Produto implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public void setQuantidade(final long quantidade) {
+	public void setQuantidade(final Long quantidade) {
 		this.quantidade = quantidade;
 	}
 
-	public void setCusto(final float custo) {
+	public void setCusto(final Float custo) {
 		this.custo = custo;
 	}
 
-	public void setVenda(final float venda) {
+	public void setVenda(final Float venda) {
 		this.venda = venda;
 	}
 }

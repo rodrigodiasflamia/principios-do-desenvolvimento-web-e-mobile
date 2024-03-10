@@ -18,20 +18,20 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
-	public String form() {
+	public String form(final Produto produto) {
 		return "produto/formulario";
 	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public String create(final Produto produto) {
 		this.produtoService.save(produto);
-		return "redirect:/produto/formulario";
+		return "redirect:/cadastrar";
 	}
 
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
-	public ModelMap read(final ModelMap mp) {
+	public String read(final ModelMap mp) {
 		final List<Produto> produtos = this.produtoService.findAll();
 		mp.addAttribute("produtos", produtos);
-		return mp;
+		return "listar";
 	}
 }
