@@ -22,8 +22,9 @@
 					<tr>
 						<th>Descrição</th>
 						<th>Quantidade</th>
-						<th>Valor de Custo</th>
-						<th>Valor de Venda</th>
+						<th>Valor de Custo (R$)</th>
+						<th>Valor de Venda (R$)</th>
+						<th>Excluir</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -32,6 +33,11 @@
 						<td><span th:text="${produto.quantidade}"></span></td>
 						<td><span th:text="${produto.custo}"></span></td>
 						<td><span th:text="${produto.venda}"></span></td>
+						<td>
+							<a th:href="@{excluir/{codigo} (codigo=${produto.codigo}) }">
+								<i class="small material-icons">delete</i>
+							</a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
