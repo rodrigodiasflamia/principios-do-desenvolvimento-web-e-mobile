@@ -20,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return this.userRepository.findByUsername(username)
 				.map(user -> new UserAuthenticated(user))
 				.orElseThrow(() -> 
-					new UsernameNotFoundException("Usuário não inválido: " + username)
+					new UsernameNotFoundException("Usuário inválido: " + username)
 				);
 	}
 }
